@@ -34,10 +34,6 @@ while($row = mysqli_fetch_array($result))
 	$content .= "<td>" . $row['appartmentNo'] . "</td>";
 	$content .= "<td>" . $row['familyIncome'] . "</td>";
 	$content .= "<td>" . $row['roof'] . "</td>";
-
-	
-	$content .= "</td>";
-
 }
 $content .= "</tbody";
 $content .= "</table>";

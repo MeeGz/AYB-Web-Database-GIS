@@ -68,7 +68,7 @@ $conn->close();
                             <label><input type="radio" name="sanitation" value="no"> No</label>
                 <div class="row">
                     <input type="submit" class="btn btn-primary btn-primary" name="submit" value="Add House">
-                    <a href="ezba.php" class="btn btn-primary btn-primary"><span class="glyphicon glyphicon-backward"></span> Back</a><br><br>
+                    <a href="house.php" class="btn btn-primary btn-primary"><span class="glyphicon glyphicon-backward"></span> Back</a><br><br>
                 </div>
             </form>
         </div>
