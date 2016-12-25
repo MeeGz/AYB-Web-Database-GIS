@@ -30,7 +30,7 @@ $conn->close();
             <a href="addfamily.php" class="btn btn-lg btn-primary">Add Famliy</a>
         </div> <br>
         <div class="row">
-            <a href="showezbamember.php" class="btn btn-lg btn-primary">Show Familys' Details</a>
+            <a href="showfamily.php" class="btn btn-lg btn-primary">Show Familys' Details</a>
         </div> <br>
         <div class="row">
             <a href="ezba.php" class="btn btn-lg btn-primary btn-primary"><span class="glyphicon glyphicon-backward"></span> Back</a><br><br>
