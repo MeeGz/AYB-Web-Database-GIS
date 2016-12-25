@@ -27,10 +27,10 @@ $conn->close();
     </nav>
     <div class="container">
         <div class="row">
-            <a href="addfamily.php" class="btn btn-lg btn-primary">Add Famliy</a>
+            <a href="addfamily.php" class="btn btn-lg btn-primary">Add Family</a>
         </div> <br>
         <div class="row">
-            <a href="showfamily.php" class="btn btn-lg btn-primary">Show Familys' Details</a>
+            <a href="showfamily.php" class="btn btn-lg btn-primary">Show Families' Details</a>
         </div> <br>
         <div class="row">
             <a href="ezba.php" class="btn btn-lg btn-primary btn-primary"><span class="glyphicon glyphicon-backward"></span> Back</a><br><br>

@@ -7,6 +7,49 @@ if ($_COOKIE["admin"] == Null) {
     header('Location: login.php');
 }
 $result = mysqli_query($conn,"SELECT * FROM ezbamember");
+<<<<<<< HEAD
+$content = "<br><br><br>";
+$content .= "<div class='container'>";
+
+$content .= "<table class='table'>
+			<thead>
+			<tr>
+			<th>Ezba Member ID</th>
+			<th>Family ID</th>
+			<th>Name</th>
+			<th>Name of Fame</th>
+			<th>Sex</th>
+			<th>Birth Date</th>
+			<th>Education Conditiony</th>
+			<th>Education Level</th>
+			<th>Education Expenses</th>
+			<th>Role</th>
+			</tr>
+			</thead>";
+while($row = mysqli_fetch_array($result))
+{
+	$content .= "<tbody>";
+	$content .= "<td>" . $row['memberID'] . "</td>";
+	$content .= "<td>" . $row['familyID'] . "</td>";
+	$content .= "<td>" . $row['name'] . "</td>";
+	$content .= "<td>" . $row['famName'] . "</td>";
+	$content .= "<td>" . $row['sex'] . "</td>";
+	$content .= "<td>" . $row['birthDate'] . "</td>";
+	$content .= "<td>" . $row['educationCond'] . "</td>";
+	$content .= "<td>" . $row['educationLevel'] . "</td>";
+	$content .= "<td>" . $row['educationExpenses'] . "</td>";
+	$content .= "</td>";
+	$link ='deleteezbamember.php?id='.$row["memberID"];
+	$content .= '<td>'.'<a href="'. $link .'" class ="delete">delete</a>';
+	$link ='editezbamember.php?id='.$row["memberID"];
+	$content .= '<a href="'. $link .'"><br> edit</a>'.'</td>';
+	$content .= "</tr>";
+}
+$content .= "</tbody";
+$content .= "</table>";
+$content .= "</div>";
+
+=======
 // $numofapp = 1;
 $content = "<br><br><br>";
 while($row = mysqli_fetch_array($result))
@@ -69,6 +112,7 @@ while($row = mysqli_fetch_array($result))
 	$content .= "<br><br><br>";
 	// $numofapp++;
 }
+>>>>>>> c4f521ac41dda5f4c26fe8dc8711bf6560a4662e
 mysqli_close($conn);
 ?>
 
@@ -78,6 +122,21 @@ mysqli_close($conn);
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/add.css">
+<<<<<<< HEAD
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script language="JavaScript" type="text/javascript">
+	$(document).ready(function(){
+    $("a.delete").click(function(e){
+        if(!confirm('Are you sure?')){
+            e.preventDefault();
+            return false;
+        }
+        return true;
+    	});
+	});
+	</script>
+=======
+>>>>>>> c4f521ac41dda5f4c26fe8dc8711bf6560a4662e
 	<style>
 		body {margin: 0;}
 

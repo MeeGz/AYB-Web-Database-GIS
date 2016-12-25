@@ -27,13 +27,13 @@ $conn->close();
     </nav>
     <div class="container">
         <div class="row">
-            <a href="ezbamember.php" class="btn btn-lg btn-primary">Ezba Member</a>
+            <a href="house.php" class="btn btn-lg btn-primary">Ezba Houses</a>
         </div> <br>
         <div class="row">
-            <a href="family.php" class="btn btn-lg btn-primary">Ezba Family</a>
+            <a href="family.php" class="btn btn-lg btn-primary">Ezba Families</a>
         </div> <br>
         <div class="row">
-            <a href="house.php" class="btn btn-lg btn-primary">Ezba Homes</a>
+            <a href="ezbamember.php" class="btn btn-lg btn-primary">Ezba People</a>
         </div> <br>
         <div class="row">
             <a href="interface.php" class="btn btn-lg btn-primary btn-primary"><span class="glyphicon glyphicon-backward"></span> Back</a><br><br>
