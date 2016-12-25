@@ -30,13 +30,10 @@ $conn->close();
             <a href="ezbamember.php" class="btn btn-lg btn-primary">Ezba Member</a>
         </div> <br>
         <div class="row">
-            <a href="family.php" class="btn btn-lg btn-primary">Add Ezba Family</a>
+            <a href="family.php" class="btn btn-lg btn-primary">Ezba Family</a>
         </div> <br>
         <div class="row">
-            <a href="addezbamember.php" class="btn btn-lg btn-primary">Add Ezba Member</a>
-        </div> <br>
-        <div class="row">
-            <a href="showezbamember.php" class="btn btn-lg btn-primary">Show Ezba Members' Details</a>
+            <a href="house.php" class="btn btn-lg btn-primary">Ezba Homes</a>
         </div> <br>
         <div class="row">
             <a href="interface.php" class="btn btn-lg btn-primary btn-primary"><span class="glyphicon glyphicon-backward"></span> Back</a><br><br>
