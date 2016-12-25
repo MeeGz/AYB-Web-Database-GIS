@@ -21,6 +21,7 @@ $content .= "<table class='table'>
 				<th>AppartmentNo</th>
 				<th>Family Income</th>
 				<th>Roof</th>
+				<th>Role</th>
 			</tr>
 			</thead>";
 
@@ -34,6 +35,12 @@ while($row = mysqli_fetch_array($result))
 	$content .= "<td>" . $row['appartmentNo'] . "</td>";
 	$content .= "<td>" . $row['familyIncome'] . "</td>";
 	$content .= "<td>" . $row['roof'] . "</td>";
+	$content .= "</td>";
+	$link ='deletefamily.php?id='.$row["familyID"];
+	$content .= '<td>'.'<a href="'. $link .'">delete</a>';
+	$link ='editfamily.php?id='.$row["familyID"];
+	$content .= '<a href="'. $link .'"><br> edit</a>'.'</td>';
+	$content .= "</tr>";
 }
 $content .= "</tbody";
 $content .= "</table>";
