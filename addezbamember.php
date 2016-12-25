@@ -182,7 +182,7 @@ $conn->close();
                 </div>
                 <div class="row">
                     <input type="submit" class="btn btn-primary btn-primary" name="submit" value="Add Member">
-                    <a href="ezba.php" class="btn btn-primary btn-primary"><span class="glyphicon glyphicon-backward"></span> Back</a><br><br>
+                    <a href="ezbamember.php" class="btn btn-primary btn-primary"><span class="glyphicon glyphicon-backward"></span> Back</a><br><br>
                 </div>
             </form>
         </div>

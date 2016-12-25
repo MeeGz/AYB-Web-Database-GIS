@@ -37,9 +37,9 @@ while($row = mysqli_fetch_array($result))
 	$content .= "<td>" . $row['roof'] . "</td>";
 	$content .= "</td>";
 	$link ='deletefamily.php?id='.$row["familyID"];
-	$content .= '<td>'.'<a href="'. $link .'">delete</a>';
+	$content .= '<td>'.'<a href="'. $link .'" class="delete" >delete</a>';
 	$link ='editfamily.php?id='.$row["familyID"];
-	$content .= '<a href="'. $link .'"><br> edit</a>'.'</td>';
+	$content .= '<a href="'. $link .'" ><br> edit</a>'.'</td>';
 	$content .= "</tr>";
 }
 $content .= "</tbody";
@@ -55,6 +55,18 @@ mysqli_close($conn);
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/add.css">
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script language="JavaScript" type="text/javascript">
+	$(document).ready(function(){
+    $("a.delete").click(function(e){
+        if(!confirm('Are you sure?')){
+            e.preventDefault();
+            return false;
+        }
+        return true;
+    	});
+	});
+	</script>
 	<style>
 		body {margin: 0;}
 
@@ -127,7 +139,7 @@ mysqli_close($conn);
     </nav>
 	<div class="container">
 	<div class="row">
-        <a href="crew.php" class="btn btn-primary btn-primary"><span class="glyphicon glyphicon-backward"></span> Back</a><br><br>
+        <a href="family.php" class="btn btn-primary btn-primary"><span class="glyphicon glyphicon-backward"></span> Back</a><br><br>
     </div>
 	<?php echo $content; ?>
 	<div class="row">

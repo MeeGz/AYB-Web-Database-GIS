@@ -146,7 +146,7 @@ mysqli_close($conn);
     </nav>
 	<div class="container">
 	<div class="row">
-        <a href="ezba.php" class="btn btn-primary btn-primary"><span class="glyphicon glyphicon-backward"></span> Back</a><br><br>
+        <a href="ezbamember.php" class="btn btn-primary btn-primary"><span class="glyphicon glyphicon-backward"></span> Back</a><br><br>
     </div>
 	<?php echo $content; ?>
 	<div class="row">
