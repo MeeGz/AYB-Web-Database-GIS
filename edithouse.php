@@ -24,8 +24,8 @@ if (isset($_POST['area'])) {
     $m->specialSign = $_POST['specialSign'];
     $m->sanitation = $_POST['sanitation'];
 
-    $sql = "UPDATE house SET area='".$m->area."', houseCode='".$m->houseCode."', noOfFloors='".$m->noOfFloors."', noOfAppartments='".$m->noOfAppartments."', specialSign='".$m->specialSign."', sanitation='".$m->sanitation"' WHERE houseCode='".$_GET['id']."'";
-    if ($conn->query($sql) === TRUE) {
+    $sql = "UPDATE house SET area='".$m->area."', houseCode='".$m->houseCode."', noOfFloors='".$m->noOfFloors."', noOfAppartments='".$m->noOfAppartments."', specialSign='".$m->specialSign. " ', sanitation=' " .$m->sanitation." ' WHERE houseCode='".$_POST['id']."'";
+	if ($conn->query($sql) === TRUE) {
         $record = "New house is added successfully";
         $sql = "DELETE FROM house WHERE houseCode=''".$_GET['id']."'";
         header('Location: showhouse.php');
