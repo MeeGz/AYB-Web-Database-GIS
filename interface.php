@@ -60,9 +60,9 @@ $conn->close();
     
 
 <!-- Images  show -->
-<div class="w3-content w3-display-container" style="max-width:800px">
+<div class="w3-content w3-display-container" style="max-width:1000px">
   <img class="mySlides" src="DSC_0148.jpg" style="width:100%">
-  <img class="mySlides" src="pic1.jpg" style="width:100%">
+  <img class="mySlides" src="DSC_0148.jpg" style="width:100%">
   <img class="mySlides" src="DSC_0148.jpg" style="width:100%">
   <div class="w3-center w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
     <div class="w3-left w3-padding-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>

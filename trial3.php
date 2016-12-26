@@ -61,7 +61,7 @@ $conn->close();
 <!-- -->
 <div class="w3-content" style="max-width:1200px">
   <img class="mySlides" src="DSC_0148.jpg" style="width:100%">
-  <img class="mySlides" src="Untitled-1.jpg" style="width:100%">
+  <img class="mySlides" src="pic1.jpg" style="width:100%">
   <img class="mySlides" src="14528282_10153723058301012_1641065070_n.jpg" style="width:100%">
 
   <div class="w3-row-padding w3-section">
