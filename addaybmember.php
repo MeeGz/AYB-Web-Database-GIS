@@ -81,7 +81,7 @@ $conn->close();
                 Residence: <input type="text" name="residence" required><br><br>
                 AYB Year: <input type="text" name="AYBYear"><br><br>
                 <div class="row">
-                    <legend>projects</legend>
+                    <legend>Participated Projects</legend>
                     <?php while($row = $project_array->fetch_assoc()) { ?> 
                         <div class="form-group col-xs-4">                   
                             <label>

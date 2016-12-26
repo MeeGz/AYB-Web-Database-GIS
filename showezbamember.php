@@ -20,7 +20,7 @@ $content .= "<table class='table'>
 			<th>Name of Fame</th>
 			<th>Sex</th>
 			<th>Birth Date</th>
-			<th>Education Conditiony</th>
+			<th>Education Condition</th>
 			<th>Education Level</th>
 			<th>Education Expenses</th>
 			<th>Role</th>

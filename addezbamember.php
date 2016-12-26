@@ -170,7 +170,7 @@ $conn->close();
                              <label><input type="radio" onclick="inferior().one" name="membertype" value="inferior" required> Inferior</label><br><br>
                 <span id="membertypee"></span>
                 <div class="row">
-                    <legend>projects</legend>
+                    <legend>Projects affecting him/her</legend>
                     <?php while($row = $project_array->fetch_assoc()) { ?> 
                         <div class="form-group col-xs-4">
                             <label>

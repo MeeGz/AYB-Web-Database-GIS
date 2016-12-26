@@ -34,11 +34,12 @@ while($row = mysqli_fetch_array($result))
 	$content .= "<td>" . $row['noOfAppartments'] . "</td>";
 	$content .= "<td>" . $row['specialSign'] . "</td>";
 	$content .= "<td>" . $row['sanitation'] . "</td>";
-	$content .= "</td>";
+	
 	$link ='deletehouse.php?id='.$row["houseCode"];
-	$content .= '<td>'.'<a href="'. $link .'">delete</a>';
+	$content .='<td>'.'<a href="'. $link .'" class ="delete">delete</a>';
+
 	$link ='edithouse.php?id='.$row["houseCode"];
-	$content .= '<a href="'. $link .'" ><br> edit</a>'.'</td>';
+	$content .='<a href="'. $link .'" ><br> edit</a>'.'</td>';
 	$content .= "</tr>";
 }
 $content .= "</tbody";

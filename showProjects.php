@@ -14,7 +14,8 @@ $content .= "<table class='table'>
 			<thead>
 			<tr>
 			<th>Project ID</th>
-			<th>Name</th>
+			<th>Project Name</th>
+			<th>Role</th>
 			</tr>
 			</thead>";
 while($row = mysqli_fetch_array($result))
@@ -22,6 +23,11 @@ while($row = mysqli_fetch_array($result))
 	$content .= "<tbody>";
 	$content .= "<td>" . $row['projectID'] . "</td>";
 	$content .= "<td>" . $row['projectName'] . "</td>";			
+	$link ='deleteproject.php?id='.$row["projectID"];
+	$content .= '<td>'.'<a href="'. $link .'" class ="delete">delete</a>';
+	
+	$link ='editproject.php?id='.$row["projectID"];
+	$content .= '<a href="'. $link .'"><br> edit</a>'.'</td>';
 	$content .= "</tr>";
 }
 $content .= "</tbody";
@@ -35,6 +41,75 @@ mysqli_close($conn);
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/add.css">
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script language="JavaScript" type="text/javascript">
+	$(document).ready(function(){
+    $("a.delete").click(function(e){
+        if(!confirm('Are you sure?')){
+            e.preventDefault();
+            return false;
+        }
+        return true;
+    	});
+	});
+	</script>
+	<style>
+		body {margin: 0;}
+
+		ul.topnav {
+		    list-style-type: none;
+		    margin: 0;
+		    padding: 0;
+		    overflow: hidden;
+		    background-color: #333;
+		}
+
+		ul.topnav li {float: left;}
+
+		ul.topnav li a {
+		    display: block;
+		    color: white;
+		    text-align: center;
+		    padding: 14px 16px;
+		    text-decoration: none;
+		}
+
+		ul.topnav li a:hover:not(.active) {background-color: #111;}
+
+		ul.topnav li a.active {background-color: #4CAF50;}
+
+		ul.topnav li.right {float: right;}
+		td{
+			direction: rtl;
+		}
+		table {
+		    border-collapse: collapse;
+		    width: 100%;
+		}
+		th, td {
+		    text-align: left;
+		    padding: 8px;
+		}
+		tr:nth-child(even){background-color: #f2f2f2}
+		a{
+			text-align: center
+		}
+		img{
+			height: 50px;
+		}
+		th{
+			width: 11%;
+			background-color: silver;
+		}
+		td {
+		    word-break: break-all;
+		}
+		span{
+			font-size: 20px;
+		}
+	</style>
+
 </head>
 
 <body>
@@ -51,10 +126,11 @@ mysqli_close($conn);
       </div>
     </nav>
 	<div class="container">
-	<?php echo $content; ?>
+	
 	<div class="row">
         <a href="project.php" class="btn btn-primary btn-primary"><span class="glyphicon glyphicon-backward"></span> Back</a><br><br>
     </div>
+    <?php echo $content; ?>
 	</div>
 
 </body>
