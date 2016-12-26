@@ -9,16 +9,6 @@ if ($_COOKIE["admin"] == Null) {
 $result = mysqli_query($conn,"SELECT * FROM house");
 
 
-CREATE TABLE `house` (
-  `area` varchar(2) NOT NULL,
-  `houseCode` varchar(5) NOT NULL,
-  `noOfFloors` varchar(50) DEFAULT NULL,
-  `noOfAppartments` varchar(50) DEFAULT NULL,
-  `specialSign` varchar(100) DEFAULT NULL,
-  `sanitation` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
 $content = "<br><br><br>";
 $content .= "<div class='container'>";
 
@@ -31,6 +21,7 @@ $content .= "<table class='table'>
 				<th>AppartmentsNo</th>
 				<th>Special Sign</th>
 				<th>Sanitation</th>
+				<th>Role</th>
 			</tr>
 			</thead>";
 
@@ -43,6 +34,12 @@ while($row = mysqli_fetch_array($result))
 	$content .= "<td>" . $row['noOfAppartments'] . "</td>";
 	$content .= "<td>" . $row['specialSign'] . "</td>";
 	$content .= "<td>" . $row['sanitation'] . "</td>";
+	$content .= "</td>";
+	$link ='deletehouse.php?id='.$row["houseCode"];
+	$content .= '<td>'.'<a href="'. $link .'">delete</a>';
+	$link ='edithouse.php?id='.$row["houseCode"];
+	$content .= '<a href="'. $link .'" ><br> edit</a>'.'</td>';
+	$content .= "</tr>";
 }
 $content .= "</tbody";
 $content .= "</table>";
@@ -57,6 +54,18 @@ mysqli_close($conn);
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/add.css">
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script language="JavaScript" type="text/javascript">
+	$(document).ready(function(){
+    $("a.delete").click(function(e){
+        if(!confirm('Are you sure?')){
+            e.preventDefault();
+            return false;
+        }
+        return true;
+    	});
+	});
+	</script>
 	<style>
 		body {margin: 0;}
 
