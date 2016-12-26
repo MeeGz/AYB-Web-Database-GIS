@@ -40,9 +40,9 @@ $conn->close();
   <li class="w3-hide-small w3-dropdown-hover">
     <a href="javascript:void(0)" class="w3-hover-none w3-padding-large" title="More"> EZBA <i class="fa fa-caret-down"></i></a>     
     <div class="w3-dropdown-content w3-white w3-card-4">
-      <a href="house.php">Homes</a>
+      <a href="house.php">Houses</a>
       <a href="family.php">Families</a>
-      <a href="ezbamember.php">People</a>
+      <a href="ezbamember.php">Ezba People</a>
     </div>
   </li>
   <li class="w3-hide-small w3-dropdown-hover">

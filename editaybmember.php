@@ -86,7 +86,7 @@ if (isset($_POST['name'])) {
     </nav>
     <div class="container">
         <div class="row">
-            <h2>Edit member</h2>
+            <h2>Edit Member</h2>
             <form method="post" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
             	<input type="hidden" name="id" value="<?php echo $_GET['id']; ?> ">
                 Name: <input type="text" name="name" value="<?php echo $aybmemberdetails['name'] ?>" required><br><br>
@@ -98,7 +98,7 @@ if (isset($_POST['name'])) {
                 Residence: <input type="text" name="residence" value="<?php echo $aybmemberdetails['residence'] ?>" required><br><br>
                 AYB Year: <input type="text" name="AYBYear" value="<?php echo $aybmemberdetails['AYBYear'] ?>"><br><br>
                 <div class="row">
-                    <legend>projects</legend>
+                    <legend>Participated Projects</legend>
                     <?php while($row = $project_array->fetch_assoc()) {	
                     	$checked= '';
 	                	if ( in_array( $row['projectName'],$project_exist) ) {
