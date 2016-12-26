@@ -23,7 +23,7 @@ $content .= "<table class='table'>
 			<th>Residence</th>
 			<th>AYB Year</th>
 			<th>Position</th>
-			<th>Role</th>
+			<th>Action</th>
 			</tr>
 			</thead>";
 while($row = mysqli_fetch_array($result))

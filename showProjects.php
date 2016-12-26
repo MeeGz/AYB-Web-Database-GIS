@@ -15,7 +15,7 @@ $content .= "<table class='table'>
 			<tr>
 			<th>Project ID</th>
 			<th>Project Name</th>
-			<th>Role</th>
+			<th>Action</th>
 			</tr>
 			</thead>";
 while($row = mysqli_fetch_array($result))
