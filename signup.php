@@ -28,7 +28,7 @@ $conn->close();
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="css/signup.css">
+<link rel="stylesheet" type="text/css" href="signup.css">
 <title>Sign up</title>
 </head>
 <body>
@@ -62,7 +62,7 @@ $conn->close();
                 </div>
                 <div class="row">
                     <div class="col-md-3"></div>
-                    <div class="col-md-6"> 
+                    <div class="col-md-6 already_account"> 
                         <a href="login.php">Already have an account!</a>
                     </div>
                 </div>
