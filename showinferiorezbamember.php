@@ -7,7 +7,7 @@ if ($_COOKIE["admin"] == Null) {
     header('Location: login.php');
 }
 $result = mysqli_query($conn,"SELECT e.memberID , e.familyID , e.name , e.famName , e.sex, e.birthDate , 
-									 e.educationCond,e.educationLevel,e.educationExpenses,p.projectName
+									 e.educationCond,e.educationLevel,e.educationExpenses,p.projectName,i.conditionn
 								FROM ezbamember e , project p , participate z , inferior i
 								WHERE z.memberID = e.memberID AND p.projectID = z.projectID 
 									  AND i.memberID = e.memberID
@@ -29,6 +29,7 @@ $content .= "<table class='table'>
 			<th>Education Level</th>
 			<th>Education Expenses</th>
 			<th>Project Name</th>
+			<th>Condition</th>
 			<th>Action</th>
 			</tr>
 			</thead>";
@@ -45,6 +46,7 @@ while($row = mysqli_fetch_array($result))
 	$content .= "<td>" . $row['educationLevel'] . "</td>";
 	$content .= "<td>" . $row['educationExpenses'] . "</td>";
 	$content .= "<td>" . $row['projectName'] . "</td>";
+	$content .= "<td>" . $row['conditionn'] . "</td>";
 	$content .= "</td>";
 	$link ='deleteezbamember.php?id='.$row["memberID"];
 	$content .= '<td>'.'<a href="'. $link .'" class ="delete">delete</a>';
