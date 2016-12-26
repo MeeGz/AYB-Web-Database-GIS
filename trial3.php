@@ -58,18 +58,22 @@ $conn->close();
 </div>
    
     
+<!-- -->
+<div class="w3-content" style="max-width:1200px">
+  <img class="mySlides" src="DSC_0148.jpg" style="width:100%">
+  <img class="mySlides" src="Untitled-1.jpg" style="width:100%">
+  <img class="mySlides" src="14528282_10153723058301012_1641065070_n.jpg" style="width:100%">
 
-<!-- Images  show -->
-<div class="w3-content w3-display-container" style="max-width:800px">
-  <img class="mySlides" src="DSC_0148.jpg" style="width:100%">
-  <img class="mySlides" src="pic1.jpg" style="width:100%">
-  <img class="mySlides" src="DSC_0148.jpg" style="width:100%">
-  <div class="w3-center w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
-    <div class="w3-left w3-padding-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
-    <div class="w3-right w3-padding-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
-    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+  <div class="w3-row-padding w3-section">
+    <div class="w3-col s4">
+      <img class="demo w3-opacity w3-hover-opacity-off" src="img_nature_wide.jpg" style="width:100%" onclick="currentDiv(1)">
+    </div>
+    <div class="w3-col s4">
+      <img class="demo w3-opacity w3-hover-opacity-off" src="img_fjords_wide.jpg" style="width:100%" onclick="currentDiv(2)">
+    </div>
+    <div class="w3-col s4">
+      <img class="demo w3-opacity w3-hover-opacity-off" src="img_mountains_wide.jpg" style="width:100%" onclick="currentDiv(3)">
+    </div>
   </div>
 </div>
 
@@ -89,20 +93,17 @@ function showDivs(n) {
   var i;
   var x = document.getElementsByClassName("mySlides");
   var dots = document.getElementsByClassName("demo");
-  if (n > x.length) {slideIndex = 1}    
+  if (n > x.length) {slideIndex = 1}
   if (n < 1) {slideIndex = x.length}
   for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";  
+     x[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {
-     dots[i].className = dots[i].className.replace(" w3-white", "");
+     dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
   }
-  x[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " w3-white";
+  x[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " w3-opacity-off";
 }
 </script>
-
-
-
 </body>
 </html>
