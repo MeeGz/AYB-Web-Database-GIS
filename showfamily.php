@@ -21,7 +21,7 @@ $content .= "<table class='table'>
 				<th>AppartmentNo</th>
 				<th>Family Income</th>
 				<th>Roof</th>
-				<th>Role</th>
+				<th>Action</th>
 			</tr>
 			</thead>";
 
