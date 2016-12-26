@@ -55,9 +55,16 @@ $conn->close();
     <div class="container">
         <div class="row">
             <h2>Add New Project</h2>
-            <form method="post" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-                Project Name: <input type="text" name="projectName" required><br><br>
-                <div class="row">
+            <form  class="form-horizontal"  style ="padding :20px" method="post" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                <div style ="border-radius :25px "class ="well well-lg col-md-8 col-md-offset-2">
+				<div class="col-md-offset-2" >
+				<div class="form-group">	
+						<label for ="name"  class="col-md-3 " >Project Name: </label>
+						<input type="text" name="projectName" id="name" class="col-md-4  "  required><br>
+				</div>
+				</div>
+				</div>
+                <div class="form-group col-md-12">
                     <input type="submit" class="btn btn-primary btn-primary" name="submit" value="Add Project">
                     <a href="project.php" class="btn btn-primary btn-primary"><span class="glyphicon glyphicon-backward"></span> Back</a><br><br>
                 </div>
