@@ -7,7 +7,7 @@ if ($_COOKIE["admin"] == Null) {
     header('Location: login.php');
 }
 $result = mysqli_query($conn,"SELECT * FROM ezbamember");
-<<<<<<< HEAD
+
 $content = "<br><br><br>";
 $content .= "<div class='container'>";
 
@@ -49,70 +49,6 @@ $content .= "</tbody";
 $content .= "</table>";
 $content .= "</div>";
 
-=======
-// $numofapp = 1;
-$content = "<br><br><br>";
-while($row = mysqli_fetch_array($result))
-{
-	// $content .= "<span >Applicant number: " . $numofapp . "</span><br>";
-	$content .= "<table border='1'>
-				<tr>
-				<th>Ezba Member ID</th>";
-	$content .= "<td>" . $row['memberID'] . "</td>";
-	$content .= "</tr>";
-
-	$content .= "<table border='1'>
-				<tr>
-				<th>Family ID</th>";
-	$content .= "<td>" . $row['familyID'] . "</td>";
-	$content .= "</tr>";
-	
-	$content .= "<table border='1'>
-				<tr>
-				<th>Name</th>";
-	$content .= "<td>" . $row['name'] . "</td>";
-	$content .= "</tr>";
-	
-	$content .= "<table border='1'>
-				<tr>
-				<th>Fame Name</th>";
-	$content .= "<td>" . $row['famName'] . "</td>";
-	$content .= "</tr>";
-	
-	$content .= "<table border='1'>
-				<tr>
-				<th>Sex</th>";
-	$content .= "<td>" . $row['sex'] . "</td>";
-	$content .= "</tr>";
-	
-	$content .= "<table border='1'>
-				<tr>
-				<th>Birth Date</th>";
-	$content .= "<td>" . $row['birthDate'] . "</td>";
-	$content .= "</tr>";
-
-	$content .= "<table border='1'>
-				<tr>
-				<th>Education Condition</th>";
-	$content .= "<td>" . $row['educationCond'] . "</td>";
-	$content .= "</tr>";
-
-	$content .= "<table border='1'>
-				<tr>
-				<th>Education Level</th>";
-	$content .= "<td>" . $row['educationLevel'] . "</td>";
-	$content .= "</tr>";
-
-	$content .= "<table border='1'>
-				<tr>
-				<th>Education Expenses</th>";
-	$content .= "<td>" . $row['educationExpenses'] . "</td>";
-	$content .= "</tr>";
-	$content .= "</table>";
-	$content .= "<br><br><br>";
-	// $numofapp++;
-}
->>>>>>> c4f521ac41dda5f4c26fe8dc8711bf6560a4662e
 mysqli_close($conn);
 ?>
 
@@ -122,7 +58,6 @@ mysqli_close($conn);
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/add.css">
-<<<<<<< HEAD
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script language="JavaScript" type="text/javascript">
 	$(document).ready(function(){
@@ -135,8 +70,6 @@ mysqli_close($conn);
     	});
 	});
 	</script>
-=======
->>>>>>> c4f521ac41dda5f4c26fe8dc8711bf6560a4662e
 	<style>
 		body {margin: 0;}
 

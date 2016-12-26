@@ -27,7 +27,6 @@ $conn->close();
     </nav>
     <div class="container">
         <div class="row">
-<<<<<<< HEAD
             <a href="house.php" class="btn btn-lg btn-primary">Ezba Houses</a>
         </div> <br>
         <div class="row">
@@ -35,15 +34,6 @@ $conn->close();
         </div> <br>
         <div class="row">
             <a href="ezbamember.php" class="btn btn-lg btn-primary">Ezba People</a>
-=======
-            <a href="ezbamember.php" class="btn btn-lg btn-primary">Ezba Member</a>
-        </div> <br>
-        <div class="row">
-            <a href="family.php" class="btn btn-lg btn-primary">Ezba Family</a>
-        </div> <br>
-        <div class="row">
-            <a href="house.php" class="btn btn-lg btn-primary">Ezba Homes</a>
->>>>>>> c4f521ac41dda5f4c26fe8dc8711bf6560a4662e
         </div> <br>
         <div class="row">
             <a href="interface.php" class="btn btn-lg btn-primary btn-primary"><span class="glyphicon glyphicon-backward"></span> Back</a><br><br>
