@@ -57,16 +57,42 @@ $conn->close();
     <div class="container">
         <div class="row">
             <h2>Add House</h2>
-            <form method="post" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+            <form class="form-horizontal"  style ="padding :20px" method="post" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+				<div style ="border-radius :25px "class ="well well-lg col-md-8 col-md-offset-2">
+				<div class="col-md-offset-2" >
+			   <div class="form-group">	
+						<label for ="area"  class="col-md-3 " > Area: </label>
+						<input type="text" name="area" id="area" class="col-md-4  "  required><br>
+				</div>
+				<div class="form-group">	
+						<label for ="code"  class="col-md-3 " >  House Code:  </label>
+						<input type="text" name="houseCode" id="code" class="col-md-4  "  required><br>
+				</div>
+				<div class="form-group">	
+						<label for ="floors"  class="col-md-3 " >   No. of Floors in House:  </label>
+						<input type="text" name="noOfFloors" id="floors" class="col-md-4  "  required><br>
+				</div>
+				<div class="form-group">	
+						<label for ="appartments"  class="col-md-3 " >   No. of Appartments in House:  </label>
+						<input type="text" name="noOfAppartments" id="appartments" class="col-md-4  "  ><br>
+				</div>
+                <div class="form-group">	
+						<label for ="sign"  class="col-md-3 " >   Special Sign:  </label>
+						<input type="text" name="specialSign" id="sign" class="col-md-4  "  ><br>
+				</div>
                 
-                Area: <input type="text" name="area" required><br><br>
-                House Code: <input type="text" name="houseCode" required><br><br>
-                No. of Floors in House: <input type="text" name="noOfFloors"><br><br>
-                No. of Appartments in House: <input type="text" name="noOfAppartments"><br><br>
-                Special Sign: <input type="text" name="specialSign"><br><br>
-                Sanitation: <label><input type="radio" name="sanitation" value="yes"> Yes</label>
-                            <label><input type="radio" name="sanitation" value="no"> No</label>
-                <div class="row">
+                <div class="form-group">	
+						 <label for ="sign" class="col-md-3 " > Sanitation: </label>
+						 <div class="col-md-4">
+						 <label class="radio-inline"><input type="radio" name="sanitation" id ="sign" value="yes" class="  "> Yes</label>
+						 <label class="radio-inline"><input type="radio" name="sanitation" id="sign" value="no"> No</label>
+						</div>
+				</div>
+                </div>
+				</div>
+               
+                            
+                <div class="form-group col-md-12">
                     <input type="submit" class="btn btn-primary btn-primary" name="submit" value="Add House">
                     <a href="house.php" class="btn btn-primary btn-primary"><span class="glyphicon glyphicon-backward"></span> Back</a><br><br>
                 </div>
