@@ -50,7 +50,7 @@ while($row = mysqli_fetch_array($result))
 	$content .= "</td>";
 	$link ='deleteezbamember.php?id='.$row["memberID"];
 	$content .= '<td>'.'<a href="'. $link .'" class ="delete">delete</a>';
-	$link ='editezbamember.php?id='.$row["memberID"];
+	$link ='editinferiorezbamember.php?id='.$row["memberID"];
 	$content .= '<a href="'. $link .'"><br> edit</a>'.'</td>';
 	$content .= "</tr>";
 }

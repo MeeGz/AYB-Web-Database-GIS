@@ -7,8 +7,9 @@ if ($_COOKIE["admin"] == Null) {
 $sql = "SELECT * FROM ezbamember WHERE memberID ='".$_GET['id']."'";
 $memberdetails = $conn->query($sql);
 $memberdetails = $memberdetails->fetch_assoc();
-
-
+$sql = "SELECT conditionn FROM inferior WHERE memberID='".$_GET['id']."'";
+$condition = $conn->query($sql);
+$condition = $condition->fetch_assoc();
 class ezbaMember{
     public $name;
     public $famName;
@@ -18,7 +19,11 @@ class ezbaMember{
     public $educationLevel;
     public $educationExpenses;
 }
+class inferior{
+    public $condition;
+}
 $m = new ezbaMember;
+$i = new inferior;
 $record = "";
 if (isset($_POST['name'])) {
     $m->name = $_POST['name'];
@@ -28,9 +33,13 @@ if (isset($_POST['name'])) {
     $m->educationCond = $_POST['educationCond'];
     $m->educationLevel = $_POST['educationLevel'];
     $m->educationExpenses = $_POST['educationExpenses'];
-    
+    if (isset(elly goa el conditon)){
+      $i->conditon = $_POST['conditon'];
+    }
     $sql = "UPDATE ezbamember SET name = '".$m->name."', famName='".$m->famName."', sex='".$m->sex."', birthDate='".$m->birthDate."'    ,  educationCond='".$m->educationCond."' ,educationLevel='".$m->educationLevel."',educationExpenses='".$m->educationExpenses."' WHERE memberID = ".$_POST['id'];
 
+    n3ml update b2a ll condition
+     = "UPDATE inferior SET conditionn = ' " . $i->conditionn."' WHERE memberID= " .$_POST['id'];
     if ($conn->query($sql) === TRUE) {
         $record = "New member is added successfully";
         $sql = "DELETE FROM ezbamember WHERE memberID='". $_POST['id'] ."'";
@@ -95,18 +104,22 @@ if (isset($_POST['name'])) {
 </div>
 
     <div class="container">
+        <br><br>
         <h2>Edit Member</h2>
         <form method="post" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
         	<input type="hidden" name="id" value="<?php echo $_GET['id']; ?> ">
             Name: <input type="text" name="name" value="<?php echo $memberdetails['name'] ?>" required><br><br>
             Family Name: <input type="text" name="famName" value="<?php echo $memberdetails['famName'] ?>" required><br><br>
-            Birth Date: <input type="text" name="birthDate" value="<?php echo $memberdetails['birthDate'] ?>" required><br><br>
             Sex: <label><input type="radio" name="sex" value="<?php echo $memberdetails['sex'] ?>" required> Male</label>
-                            <label><input type="radio" name="sex" value="<?php echo $memberdetails['sex'] ?>"> Female</label>
+                            <label><input type="radio" name="sex" value="<?php echo $memberdetails['sex'] ?>"> Female</label><br><br>
+            Birth Date: <input type="text" name="birthDate" value="<?php echo $memberdetails['birthDate'] ?>" required><br><br>
             Education Condition: <input type="text" name="educationCond" value="<?php echo $memberdetails['educationCond'] ?>" required><br><br>
             Education Level: <input type="text" name="educationLevel" value="<?php echo $memberdetails['educationLevel'] ?>" required><br><br>
             educationExpenses: <input type="text" name="educationExpenses" value="<?php echo $memberdetails['educationExpenses'] ?>" required><br><br>
+            Condition: <input type="text" name="condition" value="<?php echo $condition['condition'] ?>" required><br><br>
+            
             <div class="row">
+                <<?php echo $condition; ?>>
                 <input type="submit" class="btn btn-primary btn-primary" name="submit" value="Edit">
                 <a href="family.php" class="btn btn-primary btn-primary"><span class="glyphicon glyphicon-backward"></span> Back</a><br><br>
             </div>
