@@ -6,7 +6,12 @@ include"db.php";
 if ($_COOKIE["admin"] == Null) {
     header('Location: login.php');
 }
-$result = mysqli_query($conn,"SELECT * FROM ezbamember");
+$result = mysqli_query($conn,"SELECT  s.memberID , e.familyID , e.name , e.famName , e.sex, e.birthDate , 
+									 e.educationCond,e.educationLevel,e.educationExpenses,p.projectName,s.income,s.work 
+								FROM ezbamember e , project p , participate z ,superior s
+								WHERE z.memberID = e.memberID AND p.projectID = z.projectID 
+										AND s.memberID = e.memberID 
+								GROUP BY e.memberID");
 
 $content = "<br><br><br>";
 $content .= "<div class='container'>";
@@ -23,6 +28,9 @@ $content .= "<table class='table'>
 			<th>Education Condition</th>
 			<th>Education Level</th>
 			<th>Education Expenses</th>
+			<th>Project Name</th>
+			<th>income</th>
+			<th>work</th>
 			<th>Action</th>
 			</tr>
 			</thead>";
@@ -38,6 +46,9 @@ while($row = mysqli_fetch_array($result))
 	$content .= "<td>" . $row['educationCond'] . "</td>";
 	$content .= "<td>" . $row['educationLevel'] . "</td>";
 	$content .= "<td>" . $row['educationExpenses'] . "</td>";
+	$content .= "<td>" . $row['projectName'] . "</td>";
+	$content .= "<td>" . $row['income'] . "</td>";
+	$content .= "<td>" . $row['work'] . "</td>";
 	$content .= "</td>";
 	$link ='deleteezbamember.php?id='.$row["memberID"];
 	$content .= '<td>'.'<a href="'. $link .'" class ="delete">delete</a>';
