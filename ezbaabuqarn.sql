@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 24, 2016 at 11:38 PM
+-- Generation Time: Dec 27, 2016 at 01:14 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -40,7 +40,8 @@ INSERT INTO `admin` (`id`, `username`, `password`) VALUES
 (1, 'meegz', '01010'),
 (2, 'joe', '9129288'),
 (3, 'mohamed', 'magdy'),
-(34, 'yousifelhady', '9129288');
+(34, 'yousifelhady', '9129288'),
+(35, 'joeelhady', '9129288');
 
 -- --------------------------------------------------------
 
@@ -65,14 +66,13 @@ CREATE TABLE `aybmember` (
 --
 
 INSERT INTO `aybmember` (`AYBMemberID`, `name`, `phone`, `email`, `university`, `faculty`, `studyYear`, `residence`, `AYBYear`) VALUES
-(1, 'joe', '010', 'joe@ayb.com', 'asu', 'eng', '4th', 'eldaher', '14-51-16-17'),
+(1, 'joe', '010', 'yousifelhady@aybasu,com', 'asu', 'eng', '4th', 'eldaher', '14-15-16-17'),
 (2, 'bogy', '011', 'bogy.@bogy.com', 'asu', 'eng', '4th', 'nasr city', '2015-16-17'),
 (3, 'Magdy', '010', 'meg.com', 'asu', 'eng', '4th', 'el7daye2', '0'),
 (4, 'mido', '011', 'mido.com', 'asu', 'eng', '4th', 'elzatoon', '0'),
 (5, '3ezz', '0', '3ezzawy.com', 'asu', 'eng', '4th', '3een shams', '0'),
-(6, 'nash2at', '0000', 'nash_2at.com', 'asu', 'eng', '4th', 'elharam :O', '0'),
-(10, 'adios', '010109181', 'adios@aybasu.com', 'ainshams', 'engineering', '4th mechanical', 'nasr city', '2017'),
-(11, '3ebs', '0101010', '3ebs@mips.com', 'asu', 'engi', '2017', 'gesr el swees', '2015');
+(6, 'nash2at', '0000', 'nash_2at.com', 'asu', 'eng', '4th', 'elharam :O', '5555'),
+(11, '3ebs', '0101010', '3ebs@mips.com', 'asu', 'engi', '2015', 'gesr el swees', '2015');
 
 -- --------------------------------------------------------
 
@@ -97,13 +97,14 @@ CREATE TABLE `ezbamember` (
 --
 
 INSERT INTO `ezbamember` (`memberID`, `familyID`, `name`, `famName`, `sex`, `birthDate`, `educationCond`, `educationLevel`, `educationExpenses`) VALUES
-(1, 4, 'hady', '3abhady', 'male', '2 2 ', '1', '1', '900'),
-(2, 1, 'hima', 'sha3ra', 'male', '3 3 ', '2', '3', '80'),
 (3, 5, 'shokry', 'shokoz', 'male', '4 4 ', '3', '6', '7998'),
 (4, 6, 'omar', '3omar', 'male', '5 5', '4', '4', '564'),
 (5, 7, 'abdulla', '3obad', 'male', '6 6', '5', '8', '345'),
 (6, 8, 'hossam', 'hoss', 'male', '7 7', '6', '7', '564'),
-(7, 4, 'abbas', '3ebs', 'male', '8 8', '7', '9', '3455');
+(7, 4, 'abbas', '3ebs', 'male', '8 8', '7', '9', '3455'),
+(24, 66, 'nabil', 'bolbol', 'male', '1980', '0', '0', '0'),
+(25, 4, 'ana', 'wana', 'male', '1455', 'dsfdsf', 'dsfdsf', '666'),
+(26, 4, 'edy', 'gamed', 'male', '555', '444', '333', '222');
 
 -- --------------------------------------------------------
 
@@ -126,9 +127,7 @@ CREATE TABLE `family` (
 --
 
 INSERT INTO `family` (`familyID`, `houseCode`, `noFamilyMembers`, `floorNo`, `appartmentNo`, `familyIncome`, `roof`) VALUES
-(4, 'A1', 2, '2', '1', 699, 'yes'),
-(5, 'M1', 0, '2', '1', 0, 'yes'),
-(6, 'M1', 0, '2', '1', 0, 'yes'),
+(4, 'A1', 3, '2', '1', 1599, 'yes'),
 (7, 'A1', 0, '2', '1', 0, 'no'),
 (8, 'C1', 0, '1', '1', 0, 'no');
 
@@ -152,8 +151,7 @@ CREATE TABLE `house` (
 --
 
 INSERT INTO `house` (`area`, `houseCode`, `noOfFloors`, `noOfAppartments`, `specialSign`, `sanitation`) VALUES
-('A', 'A1', '', '', '', 'yes'),
-('C', 'C1', '1', '1', 'hatsh', 'yes'),
+('B', 'B1', '5', '10', 'ay 7aga', 'yes'),
 ('M', 'M1', '2', '4', 'جنب جامع أم اسامة', 'yes');
 
 -- --------------------------------------------------------
@@ -172,7 +170,8 @@ CREATE TABLE `inferior` (
 --
 
 INSERT INTO `inferior` (`memberID`, `conditionn`) VALUES
-(2, ' cc');
+(2, ' cc'),
+(25, ' hey enta');
 
 -- --------------------------------------------------------
 
@@ -205,7 +204,11 @@ INSERT INTO `manage` (`AYBMemberID`, `projectID`) VALUES
 (10, 7),
 (11, 1),
 (11, 3),
-(11, 8);
+(11, 8),
+(12, 1),
+(12, 5),
+(12, 6),
+(12, 7);
 
 -- --------------------------------------------------------
 
@@ -246,7 +249,9 @@ INSERT INTO `participate` (`memberID`, `projectID`) VALUES
 (6, 5),
 (6, 8),
 (6, 9),
-(7, 2);
+(7, 2),
+(25, 6),
+(26, 8);
 
 -- --------------------------------------------------------
 
@@ -264,15 +269,14 @@ CREATE TABLE `project` (
 --
 
 INSERT INTO `project` (`projectID`, `projectName`) VALUES
-(1, 'Zaytona'),
-(2, 'Micro Projects'),
+(2, 'masharee3 saghira'),
 (3, 'Troos'),
 (4, 'Warsha'),
 (5, 'Meshkah'),
 (6, 'kindergarten'),
 (7, 'Literacy'),
 (8, 'Charity'),
-(9, 'Medical Care');
+(10, 'medical care');
 
 -- --------------------------------------------------------
 
@@ -300,7 +304,9 @@ INSERT INTO `skills` (`memberID`, `skill`) VALUES
 (5, 'saaaw'),
 (6, 'ssdddc'),
 (6, 'zcgg'),
-(7, 'qwcdz');
+(7, 'qwcdz'),
+(24, 'baltagy'),
+(26, 'baltagy');
 
 -- --------------------------------------------------------
 
@@ -325,7 +331,9 @@ INSERT INTO `superior` (`memberID`, `income`, `work`) VALUES
 (4, 22, 'qwe'),
 (5, 22, 'qwe'),
 (6, 22, 'qwe'),
-(7, 0, '');
+(7, 0, ''),
+(24, 900, '7ares el maqar'),
+(26, 900, 'baltagy');
 
 -- --------------------------------------------------------
 
@@ -355,7 +363,10 @@ INSERT INTO `telephone` (`memberID`, `telephoneNo`) VALUES
 (6, '4576'),
 (7, '12334563'),
 (7, '543'),
-(10, '463');
+(10, '463'),
+(24, '01222222'),
+(25, '101010'),
+(26, '01010');
 
 --
 -- Indexes for dumped tables
@@ -442,7 +453,7 @@ ALTER TABLE `telephone`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 --
 -- AUTO_INCREMENT for table `aybmember`
 --
@@ -452,7 +463,7 @@ ALTER TABLE `aybmember`
 -- AUTO_INCREMENT for table `ezbamember`
 --
 ALTER TABLE `ezbamember`
-  MODIFY `memberID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `memberID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 --
 -- AUTO_INCREMENT for table `family`
 --
@@ -462,7 +473,7 @@ ALTER TABLE `family`
 -- AUTO_INCREMENT for table `project`
 --
 ALTER TABLE `project`
-  MODIFY `projectID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `projectID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

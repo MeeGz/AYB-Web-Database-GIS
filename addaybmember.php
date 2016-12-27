@@ -162,6 +162,7 @@ $conn->close();
           <li class="w3-hide-small w3-right"><a href="logout.php" class="w3-padding-large">Log out</a></li>
           <li class="w3-hide-small w3-right"><a class="w3-hover-none w3-hover-text-grey w3-padding-large"><?php echo $_COOKIE["admin"]; ?></a></li>
         </ul>
+
     </div>
 <!-- end of navbar -->
 
@@ -172,16 +173,43 @@ $conn->close();
     <div class="container">
         <div class="row">
             <h2>Add member</h2>
-            <form method="post" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-                Name: <input type="text" name="name" required><br><br>
-                Phone Number: <input type="text" name="phone" required><br><br>
-                Email: <input type="text" name="email" required><br><br>
-                University: <input type="text" name="university" required><br><br>
-                Faculty: <input type="text" name="faculty" required><br><br>
-                Study Year: <input type="text" name="studyYear" required><br><br>
-                Residence: <input type="text" name="residence" required><br><br>
-                AYB Year: <input type="text" name="AYBYear"><br><br>
-                <div class="row">
+            <form  class="form-horizontal " style ="padding :20px" method="post" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+				<div style ="border-radius :25px "class ="well well-lg col-md-8 col-md-offset-2">
+				<div class="col-md-offset-2" >
+					<div class="form-group">	
+						<label for ="name"  class="col-md-3 " >Name: </label>
+						<input type="text" name="name" id="name" class="col-md-4  "  required><br>
+					</div>
+					<div class="form-group">
+						<label for ="phone" class="col-md-3" >Phone Number: </label>	
+						<input type="text" name="phone" id="phone" class="col-md-4"  required><br>
+					</div>	
+					<div class="form-group">
+						<label for ="email" class="col-md-3">   Email: </label>
+						<input type="text" name="email" id ="email" class="col-md-4" required><br>
+					</div>
+					<div class="form-group">
+						<label for ="university" class="col-md-3">   University: </label>		
+						<input type="text" name="university" id="university" class="col-md-4" required><br>
+					</div>
+					<div class="form-group">
+						<label for ="faculty" class="col-md-3">   Faculty: </label>		
+						<input type="text" name="faculty" id="faculty" class="col-md-4" required><br>
+					</div>	
+					<div class="form-group">
+						<label for ="year" class="col-md-3">  Study Year:  </label>
+						<input type="text" name="studyYear" id="year" class="col-md-4" required><br>
+					</div>	
+					<div class="form-group">
+						<label for ="residence" class="col-md-3">  Residence:  </label>
+						<input type="text" name="residence" id="residence" class="col-md-4" required><br>
+					</div>	
+					<div class="form-group">
+						<label for ="ayb" class="col-md-3">   AYB Year:   </label>
+						<input type="text" name="AYBYear" id="ayb" class="col-md-4"><br><br>
+					</div>	
+					</div>	
+                <div class="form-group ">
                     <legend>Participated Projects</legend>
                     <?php while($row = $project_array->fetch_assoc()) { ?> 
                         <div class="form-group col-xs-4">                   
@@ -192,7 +220,8 @@ $conn->close();
                         </div>
                         <?php } ?>
                 </div>
-                <div class="row">
+				</div>
+                <div class="form-group col-md-12">
                     <input type="submit" class="btn btn-primary btn-primary" name="submit" value="Add Member">
                     <a href="crew.php" class="btn btn-primary btn-primary"><span class="glyphicon glyphicon-backward"></span> Back</a><br><br>
                 </div>

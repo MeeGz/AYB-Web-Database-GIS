@@ -1,7 +1,11 @@
 *{
 	text-align: center;
+	
 }
 
+h2{
+		text-align: left;
+}
 .tbl{
 	font-size: 20px;
 }
