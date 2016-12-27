@@ -48,7 +48,7 @@ if (isset($_POST['name'])) {
 <!DOCTYPE HTML>
 <html>
 <head>
-      <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/add.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
@@ -56,13 +56,16 @@ if (isset($_POST['name'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
     
-    <style>
-    body {font-family: "Lato", sans-serif}
-    .mySlides {display: none}
-    .demo {cursor:pointer}
-    .w3-left, .w3-right, .w3-badge {cursor:pointer}
-    .w3-badge {height:13px;width:13px;padding:0}
-    </style>
+  <style>
+      body {font-family: "Lato", sans-serif;
+      margin: 0;
+      margin-top: 50px;}
+      .mySlides {display: none}
+      .demo {cursor:pointer}
+      .w3-left, .w3-right, .w3-badge {cursor:pointer}
+      .w3-badge {height:13px;width:13px;padding:0}
+      h2 {text-align: center;}
+  </style>
 </head>
 <body>
     <!-- Navbar -->
@@ -95,7 +98,6 @@ if (isset($_POST['name'])) {
 </div>
 
     <div class="container">
-        <br><br>
         <h2>Edit Member</h2>
         <form method="post" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
         	<input type="hidden" name="id" value="<?php echo $_GET['id']; ?> ">
@@ -109,9 +111,8 @@ if (isset($_POST['name'])) {
             educationExpenses: <input type="text" name="educationExpenses" value="<?php echo $memberdetails['educationExpenses'] ?>" required><br><br>
             
             <div class="row">
-
                 <input type="submit" class="btn btn-primary btn-primary" name="submit" value="Edit">
-                <a href="family.php" class="btn btn-primary btn-primary"><span class="glyphicon glyphicon-backward"></span> Back</a><br><br>
+                <a href="showsuperiorezbamember.php" class="btn btn-primary btn-primary"><span class="glyphicon glyphicon-backward"></span> Back</a><br><br>
             </div>
         </form>
     </div>

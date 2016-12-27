@@ -1,0 +1,8 @@
+- CSS files are not working (only bootstrap)
+- edit superior and inferior ezba member should be in one page not separate pages
+- edit ezba member should be constructed from the begining and it should looks like the add page
+(i.e.: return back all values including the base information, projects and superior\inferior data)
+- when edit, radio buttons should return their older values back [Magdy kan 3amlha fel families only]
+- admin table in database should have "username" as Primary Key not auto increment ID
+- Foreign Keys constraints should be checked to suite the application operations [they are all CASCADE on update or delete]
+- ezba members telephone should be viewed in showezbamembers (superior & inferior) [it is not handled]
