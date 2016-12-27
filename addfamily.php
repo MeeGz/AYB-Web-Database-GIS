@@ -53,13 +53,32 @@ $conn->close();
     </nav>
     <div class="container">
         <h2>Add Family</h2>
-        <form method="post" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-            House Code: <input type="text" name="houseCode" required><br><br>
-            Floor No.: <input type="text" name="floorNo"><br><br>
-            Appartment No.: <input type="text" name="appartmentNo"><br><br>
-            Roof Condition: <label><input type="radio" name="roof" value="yes"> Yes</label>
-                            <label><input type="radio" name="roof" value="no"> No</label>
-            <div class="row">
+        <form class="form-horizontal"  style ="padding :20px" method="post" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+        <div style ="border-radius :25px "class ="well well-lg col-md-8 col-md-offset-2">
+		<div class="col-md-offset-2" >
+		  <div class="form-group">	
+						<label for ="code"  class="col-md-3 " > House Code: </label>
+						<input type="text" name="houseCode" id="code" class="col-md-4  "  required><br>
+			</div>
+			<div class="form-group">	
+						<label for ="floor"  class="col-md-3 " > Floor No.: </label>
+						<input type="text" name="floorNo" id="floor" class="col-md-4  "  ><br>
+			</div>
+			<div class="form-group">	
+						<label for ="appart"  class="col-md-3 " > Appartment No.:</label>
+						<input type="text" name="appartmentNo" id="appart" class="col-md-4  " ><br>
+			</div>
+			
+		    <div class="form-group">	
+						 <label for ="r" class="col-md-3 " > Roof Condition: </label>
+						 <div class="col-md-4">
+						 <label class="radio-inline"><input type="radio" name="roof" id ="r" value="yes" > Yes</label>
+						 <label class="radio-inline"><input type="radio" name="roof" id="r" value="no"> No</label>
+						</div>
+			</div>
+			</div>
+			</div>	
+            <div class="form-group col-md-12">
                 <input type="submit" class="btn btn-primary btn-primary" name="submit" value="Add Family">
                 <a href="family.php" class="btn btn-primary btn-primary"><span class="glyphicon glyphicon-backward"></span> Back</a><br><br>
             </div>
