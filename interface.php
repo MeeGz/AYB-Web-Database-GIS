@@ -26,37 +26,36 @@ $conn->close();
     </style>
 </head>
 <body>
-
-
-<!-- Navbar -->
-<div class="w3-top">
-<ul class="w3-navbar w3-black w3-card-2 w3-left-align">
-  <li class="w3-hide-medium w3-hide-large w3-opennav w3-right">
-    <a class="w3-padding-large" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-  </li>
-  <li><a href="interface.php" class="w3-hover-none w3-hover-text-grey w3-padding-large">HOME</a></li>
-  <li class="w3-hide-small"><a href="crew.php" class="w3-padding-large">CREW</a></li>
-  <li class="w3-hide-small"><a href="project.php" class="w3-padding-large">PROJECTS</a></li>
-  <li class="w3-hide-small w3-dropdown-hover">
-    <a href="javascript:void(0)" class="w3-hover-none w3-padding-large" title="More"> EZBA <i class="fa fa-caret-down"></i></a>     
-    <div class="w3-dropdown-content w3-white w3-card-4">
-      <a href="house.php">Houses</a>
-      <a href="family.php">Families</a>
-      <a href="ezbamember.php">Ezba People</a>
-    </div>
-  </li>
-  <li class="w3-hide-small w3-dropdown-hover">
-    <a href="javascript:void(0)" class="w3-hover-none w3-padding-large" title="More">MORE <i class="fa fa-caret-down"></i></a>     
-    <div class="w3-dropdown-content w3-white w3-card-4">
-      <a href="#">Events</a>
-      <a href="#">Extras</a>
-      <a href="#">Media</a>
-    </div>
-  </li>
-  <li class="w3-hide-small w3-right"><a href="logout.php" class="w3-padding-large">Log out</a></li>
-</ul>
-</div>
-   
+<!-- navbar -->
+  <div class="w3-top">
+      <ul class="w3-navbar w3-black w3-card-2 w3-left-align">
+        <li class="w3-hide-medium w3-hide-large w3-opennav w3-right">
+          <a class="w3-padding-large" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        </li>
+        <li><a href="interface.php" class="w3-padding-large">HOME</a></li>
+        <li class="w3-hide-small"><a href="crew.php" class="w3-padding-large">CREW</a></li>
+        <li class="w3-hide-small"><a href="project.php" class="w3-padding-large">PROJECTS</a></li>
+        <li class="w3-hide-small w3-dropdown-hover">
+          <a href="javascript:void(0)" class="w3-hover-none w3-padding-large" title="More"> EZBA <i class="fa fa-caret-down"></i></a>     
+          <div class="w3-dropdown-content w3-white w3-card-4">
+            <a href="house.php">Houses</a>
+            <a href="family.php">Families</a>
+            <a href="ezbamember.php">Ezba People</a>
+          </div>
+        </li>
+        <li class="w3-hide-small w3-dropdown-hover">
+          <a href="javascript:void(0)" class="w3-hover-none w3-padding-large" title="More">MORE <i class="fa fa-caret-down"></i></a>     
+          <div class="w3-dropdown-content w3-white w3-card-4">
+            <a href="#">Events</a>
+            <a href="#">Extras</a>
+            <a href="#">Media</a>
+          </div>
+        </li>
+        <li class="w3-hide-small w3-right"><a href="logout.php" class="w3-padding-large">Log out</a></li>
+        <li class="w3-hide-small w3-right"><a class="w3-hover-none w3-hover-text-grey w3-padding-large"><?php echo $_COOKIE["admin"]; ?></a></li>
+      </ul>
+  </div>
+<!-- end of navbar -->
     
 
 <!-- Images  show -->

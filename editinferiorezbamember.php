@@ -20,8 +20,9 @@ class ezbaMember{
     public $educationExpenses;
 }
 class inferior{
-    public $condition;
+    public $conditionn;
 }
+
 $m = new ezbaMember;
 $i = new inferior;
 $record = "";
@@ -33,15 +34,9 @@ if (isset($_POST['name'])) {
     $m->educationCond = $_POST['educationCond'];
     $m->educationLevel = $_POST['educationLevel'];
     $m->educationExpenses = $_POST['educationExpenses'];
-    if (isset(elly goa el conditon)){
-      $i->conditon = $_POST['conditon'];
-    }
     $sql = "UPDATE ezbamember SET name = '".$m->name."', famName='".$m->famName."', sex='".$m->sex."', birthDate='".$m->birthDate."'    ,  educationCond='".$m->educationCond."' ,educationLevel='".$m->educationLevel."',educationExpenses='".$m->educationExpenses."' WHERE memberID = ".$_POST['id'];
-
-    n3ml update b2a ll condition
-     = "UPDATE inferior SET conditionn = ' " . $i->conditionn."' WHERE memberID= " .$_POST['id'];
     if ($conn->query($sql) === TRUE) {
-        $record = "New member is added successfully";
+        $record = "edited successfully";
         $sql = "DELETE FROM ezbamember WHERE memberID='". $_POST['id'] ."'";
         header('Location: showezbamember.php');
     } else {
@@ -51,6 +46,27 @@ if (isset($_POST['name'])) {
             $record = "There is something wrong";
         }
     }
+    if ($_POST['conditon']== "inferior"){
+      $i->conditon = $_POST['conditon'];
+      $sql ="UPDATE inferior SET conditionn = '".$i->conditonn."' WHERE memberID= " $_POST['id'];
+
+      if ($conn->query($sql) === TRUE) {
+        $record = "edited successfully";
+        $sql = "DELETE FROM ezbamember WHERE memberID='". $_POST['id'] ."'";
+        header('Location: showezbamember.php');
+        } else {
+        if ($conn->errno == 1062) {
+            $record = "member is already added";
+        } else {
+            $record = "There is something wrong";
+        }
+    }
+    }
+    else {
+
+    }
+    
+         
 }
 
 ?>
@@ -63,7 +79,33 @@ if (isset($_POST['name'])) {
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+    <script>
+        var countphone =1;
+        var countskill =1;
+        function addPhone()
+        {
+            document.getElementById('anotherphone').innerHTML+='<input type="text" name="phone' + countphone + '" id="'+countphone+'" value="" /><br><br>';
+             countphone += 1;
+        }
+        function addSkill()
+        {
+            document.getElementById('anotherskill').innerHTML+='<input type="text" name="skill' + countskill + '" id="'+countskill+'" value="" /><br><br>';
+             countskill += 1;
+        }
+        function superior()
+        {
+            document.getElementById('membertypee').innerHTML='Skills: <input type="text" name="skill0" required>'+
+                        '<input type="button" onclick="addSkill()" value="+" />'+
+                        '<br><br>'+
+                        '<span id="anotherskill"></span>'+
+                'Work: <input type="text" name="work" required><br><br>'+
+                'Income: <input type="text" name="income" required><br><br>';
+        }
+        function inferior()
+        {
+            document.getElementById('membertypee').innerHTML='Condition: <input type="text" value= " " name="condition" required><br><br>';
+        }
+    </script>
     
     <style>
     body {font-family: "Lato", sans-serif}
@@ -110,12 +152,14 @@ if (isset($_POST['name'])) {
         	<input type="hidden" name="id" value="<?php echo $_GET['id']; ?> ">
             Name: <input type="text" name="name" value="<?php echo $memberdetails['name'] ?>" required><br><br>
             Family Name: <input type="text" name="famName" value="<?php echo $memberdetails['famName'] ?>" required><br><br>
-            Sex: <label><input type="radio" name="sex" value="<?php echo $memberdetails['sex'] ?>" required> Male</label>
-                            <label><input type="radio" name="sex" value="<?php echo $memberdetails['sex'] ?>"> Female</label><br><br>
+            Sex: <label><input type="radio" name="sex" value="male" <?php if ($memberdetails['sex'] == 'Male'){echo 'checked';} ?>> Male</label>
+                      <label><input type="radio" name="roof" value="female" <?php if ($memberdetails['sex'] == 'Female'){echo 'checked';} ?>> Female</label>
             Birth Date: <input type="text" name="birthDate" value="<?php echo $memberdetails['birthDate'] ?>" required><br><br>
             Education Condition: <input type="text" name="educationCond" value="<?php echo $memberdetails['educationCond'] ?>" required><br><br>
             Education Level: <input type="text" name="educationLevel" value="<?php echo $memberdetails['educationLevel'] ?>" required><br><br>
             educationExpenses: <input type="text" name="educationExpenses" value="<?php echo $memberdetails['educationExpenses'] ?>" required><br><br>
+             Member Type: <label><input type="radio" onclick="superior().one" name="membertype" value="superior" required> Superior</label>
+                             <label><input type="radio" onclick="inferior().one" name="membertype" value="inferior" required> Inferior</label><br><br>
             Condition: <input type="text" name="condition" value="<?php echo $condition['condition'] ?>" required><br><br>
             
             <div class="row">
