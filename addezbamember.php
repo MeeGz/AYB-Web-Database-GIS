@@ -152,24 +152,61 @@ $conn->close();
     <div class="container">
         <div class="row">
             <h2>Add member</h2>
-            <form method="post" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-                Name: <input type="text" name="name" required><br><br>
-                Famname:<input type="text" name="famname" required><br><br>
-                Sex:    <label><input type="radio" name="sex" value="male" required>Male</label>
-                        <label><input type="radio" name="sex" value="female">Female</label><br><br>
-                Phone:  <input type="text" name="phone0" required>
-                        <input type="button" onclick="addPhone()" value="+" />
-                        <br><br>
+            <form class="form-horizontal"  style ="padding :20px" method="post" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                <div style ="border-radius :25px "class ="well well-lg col-md-8 col-md-offset-2">
+				<div class="col-md-offset-2" >
+				<div class="form-group">	
+						<label for ="name"  class="col-md-3 " >Name: </label>
+						<input type="text" name="name" id="name" class="col-md-4  "  required><br>
+				</div>				
+				<div class="form-group">	
+						<label for ="fname"  class="col-md-3 " >Famname: </label>
+						<input type="text" name="famname" id="fname" class="col-md-4  "  required><br>
+				</div>
+				 <div class="form-group">	
+						 <label for ="sex" class="col-md-3 " > sex: </label>
+						 <div class="col-md-4">
+						 <label class="radio-inline"><input type="radio" name="sex" id ="sex" value="male" required> Male</label>
+						 <label class="radio-inline"><input type="radio" name="sex" id="sex" value="female" required> Female</label>
+						</div>
+				</div>		
+				<div class="form-group">	
+						<label for ="phone"  class="col-md-3 " >Phone: </label>
+						<input type="text" name="phone0" id="phone" class="col-md-4  "  required><br>
+						 <input type="button" onclick="addPhone()" value="+" />
+				</div>		
                         <span id="anotherphone"></span>
-                Family id: <input type="text" name="familyid" required><br><br>
-                Birthdate: <input type="text" name="birthdate" required><br><br>
-                Education Condition: <input type="text" name="educationcond" required><br><br>
-                Education Level: <input type="text" name="educationlevel" required><br><br>
-                Education Expenses: <input type="text" name="educationexpenses" required><br><br>
-                Member Type: <label><input type="radio" onclick="superior().one" name="membertype" value="superior" required> Superior</label>
-                             <label><input type="radio" onclick="inferior().one" name="membertype" value="inferior" required> Inferior</label><br><br>
-                <span id="membertypee"></span>
-                <div class="row">
+				<div class="form-group">	
+						<label for ="fid"  class="col-md-3 " >Family id: </label>
+						<input type="text" name="familyid" id="fid" class="col-md-4  "  required><br>
+				</div>
+				<div class="form-group">	
+						<label for ="birth"  class="col-md-3 " >Birthdate: </label>
+						<input type="text" name="birthdate" id="birth" class="col-md-4  "  required><br>
+				</div>
+				<div class="form-group">	
+						<label for ="educ"  class="col-md-3 " >Education Condition:  </label>
+						<input type="text" name="educationcond" id="educ" class="col-md-4  "  required><br>
+				</div>
+				<div class="form-group">	
+						<label for ="level"  class="col-md-3 " >Education Level: </label>
+						<input type="text" name="educationlevel" id="level" class="col-md-4  "  required><br>
+				</div>
+				<div class="form-group">	
+						<label for ="expenses"  class="col-md-3 " >Education Expenses:  </label>
+						<input type="text" name="educationexpenses" id="expenses" class="col-md-4  "  required><br>
+				</div>
+					
+				<div class="form-group">	
+						 <label for ="type" class="col-md-3 " >Member Type:</label>
+						 <div class="col-md-4">
+						 <label class="radio-inline"><input type="radio" onclick="superior().one" name="membertype" id ="type" value="superior" required> Superior</label>
+						 <label class="radio-inline"><input type="radio" onclick="inferior().one"  name="membertype" id="type" value="inferior" required> Inferior</label>
+						</div>
+				</div>	
+				</div>	
+			   <span id="membertypee"></span>
+                <div class="form-group ">
                     <legend>Projects affecting him/her</legend>
                     <?php while($row = $project_array->fetch_assoc()) { ?> 
                         <div class="form-group col-xs-4">
@@ -180,7 +217,8 @@ $conn->close();
                         </div>
                         <?php } ?>
                 </div>
-                <div class="row">
+				</div>
+                <div class="form-group col-md-12">
                     <input type="submit" class="btn btn-primary btn-primary" name="submit" value="Add Member">
                     <a href="ezbamember.php" class="btn btn-primary btn-primary"><span class="glyphicon glyphicon-backward"></span> Back</a><br><br>
                 </div>
