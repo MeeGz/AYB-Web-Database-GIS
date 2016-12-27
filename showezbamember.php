@@ -6,7 +6,7 @@ include"db.php";
 if ($_COOKIE["admin"] == Null) {
     header('Location: login.php');
 }
-$result = mysqli_query($conn,"SELECT * FROM family");
+$result = mysqli_query($conn,"SELECT * FROM ezbamember");
 
 $content = "<br><br><br>";
 $content .= "<div class='container'>";
@@ -14,32 +14,35 @@ $content .= "<div class='container'>";
 $content .= "<table class='table'>
 			<thead>
 			<tr>
-				<th>Family ID</th>
-				<th>House Code</th>
-				<th>Number of Members</th>
-				<th>Floor Number</th>
-				<th>AppartmentNo</th>
-				<th>Family Income</th>
-				<th>Roof</th>
-				<th>Action</th>
+			<th>Ezba Member ID</th>
+			<th>Family ID</th>
+			<th>Name</th>
+			<th>Name of Fame</th>
+			<th>Sex</th>
+			<th>Birth Date</th>
+			<th>Education Condition</th>
+			<th>Education Level</th>
+			<th>Education Expenses</th>
+			<th>Action</th>
 			</tr>
 			</thead>";
-
 while($row = mysqli_fetch_array($result))
 {
 	$content .= "<tbody>";
+	$content .= "<td>" . $row['memberID'] . "</td>";
 	$content .= "<td>" . $row['familyID'] . "</td>";
-	$content .= "<td>" . $row['houseCode'] . "</td>";
-	$content .= "<td>" . $row['noFamilyMembers'] . "</td>";
-	$content .= "<td>" . $row['floorNo'] . "</td>";
-	$content .= "<td>" . $row['appartmentNo'] . "</td>";
-	$content .= "<td>" . $row['familyIncome'] . "</td>";
-	$content .= "<td>" . $row['roof'] . "</td>";
+	$content .= "<td>" . $row['name'] . "</td>";
+	$content .= "<td>" . $row['famName'] . "</td>";
+	$content .= "<td>" . $row['sex'] . "</td>";
+	$content .= "<td>" . $row['birthDate'] . "</td>";
+	$content .= "<td>" . $row['educationCond'] . "</td>";
+	$content .= "<td>" . $row['educationLevel'] . "</td>";
+	$content .= "<td>" . $row['educationExpenses'] . "</td>";
 	$content .= "</td>";
-	$link ='deletefamily.php?id='.$row["familyID"];
-	$content .= '<td>'.'<a href="'. $link .'" class="delete" >delete</a>';
-	$link ='editfamily.php?id='.$row["familyID"];
-	$content .= '<a href="'. $link .'" ><br> edit</a>'.'</td>';
+	$link ='deleteezbamember.php?id='.$row["memberID"];
+	$content .= '<td>'.'<a href="'. $link .'" class ="delete">delete</a>';
+	$link ='editezbamember.php?id='.$row["memberID"];
+	$content .= '<a href="'. $link .'"><br> edit</a>'.'</td>';
 	$content .= "</tr>";
 }
 $content .= "</tbody";
