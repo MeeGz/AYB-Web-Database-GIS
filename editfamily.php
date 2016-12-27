@@ -167,8 +167,8 @@ if (isset($_POST['houseCode'])) {
             House Code: <input type="text" name="houseCode" value="<?php echo $familydetails['houseCode'] ?>" required><br><br>
             Floor No.: <input type="text" name="floorNo" value="<?php echo $familydetails['floorNo'] ?>"><br><br>
             Appartment No.: <input type="text" name="appartmentNo" value="<?php echo $familydetails['appartmentNo'] ?>"><br><br>
-            Roof Condition: <label><input type="radio" name="roof" value="<?php echo $familydetails['roof'] ?>"> Yes</label>
-                            <label><input type="radio" name="roof" value="<?php echo $familydetails['roof'] ?>"> No</label>
+            Roof Condition: <label><input type="radio" name="roof" value="yes" <?php if ($familydetails['roof'] == 'yes'){echo 'checked';} ?>> Yes</label>
+                            <label><input type="radio" name="roof" value="no" <?php if ($familydetails['roof'] == 'no'){echo 'checked';} ?>> No</label>
             <div class="row">
                 <input type="submit" class="btn btn-primary btn-primary" name="submit" value="Edit Family">
                 <a href="family.php" class="btn btn-primary btn-primary"><span class="glyphicon glyphicon-backward"></span> Back</a><br><br>
